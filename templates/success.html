@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %} Login Page {% endblock %}
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li> {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h1>Welcome to logged in Page redirection</h1>
+<h3>Click here to <a href="{% url 'userloginsystem:login' %}">Logout</a></h3>
+
+{% endblock %}
+
